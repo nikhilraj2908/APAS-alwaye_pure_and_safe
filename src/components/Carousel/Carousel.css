@@ -1,0 +1,66 @@
+.hero-carousel {
+  width: 100%;
+  
+}
+
+.hero-slide {
+  height: 75vh;
+  background-size: cover;
+  background-position: center right;
+  display: flex;
+  align-items: center;
+}
+.hero-content {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.hero-content {
+  max-width: 520px;
+  margin-left: 8%;
+}
+
+.hero-tagline {
+  color: #007ce7;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  color: #222222;
+}
+
+.hero-subtitle-carousel {
+  font-size: 18px;
+  color: #555555;
+  margin-bottom: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.hero-btn {
+  border: none;
+  padding: 12px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero-btn-primary {
+  background-color: #007ce7;
+  color: #ffffff;
+}
+
+.hero-btn-dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+    

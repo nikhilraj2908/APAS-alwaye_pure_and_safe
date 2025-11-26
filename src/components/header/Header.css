@@ -1,0 +1,73 @@
+.header {
+  width: 100%;
+  padding: 18px 0;
+  background: linear-gradient(90deg, #e7f6ff, #ffffff); /* Water-themed gradient */
+  backdrop-filter: saturate(180%) blur(6px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 55px;
+  object-fit: contain;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  color: #003b73; /* Deep blue */
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+/* Blue underline on hover */
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #007ce7;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Appointment button */
+.appointment-btn {
+  background: linear-gradient(90deg, #0094ff, #0072d1);
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0px 4px 12px rgba(0, 114, 209, 0.3);
+  transition: 0.3s ease;
+}
+
+.appointment-btn:hover {
+  background: linear-gradient(90deg, #0088ea, #005fb8);
+  transform: translateY(-2px);
+}

@@ -1,0 +1,107 @@
+.about-apas-section {
+  width: 100%;
+  padding: 10px 0;
+  background: #f7f9fb;
+}
+
+.about-apas-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* Left Image */
+.about-apas-image {
+  flex: 1;
+  position: relative;
+}
+
+.about-apas-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Badge on image */
+.badge {
+  position: absolute;
+ bottom: 5px;
+  left:1%;
+
+  padding: 12px 20px;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+/* Right Content */
+.about-apas-content {
+  flex: 1;
+}
+
+.tagline {
+  color: #007ce7;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.about-apas-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #003b73;
+}
+
+.description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+/* Highlight / award */
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #003b73;
+  font-size: 16px;
+}
+
+.highlight i {
+  color: #007ce7;
+  font-size: 22px;
+}
+
+/* Button */
+.btn-apas {
+  background: #007ce7;
+  color: #fff;
+  padding: 12px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-apas:hover {
+  background: #007ce7;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-apas-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
