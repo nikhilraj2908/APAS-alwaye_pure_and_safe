@@ -7,8 +7,10 @@ import sideBottle from "../../assets/banner2.png";
 
 export function AboutApasSection() {
   return (
-    <section className="about-apas-section " style={{marginTop:'10vh'}}>
+    <section className="about-apas-section " style={{paddingTop:'20vh'}}>
+        <h2 className="section-title text-center mb-5">About APAS</h2>
       <div className="about-apas-container">
+
         {/* Left image */}
         <div className="about-apas-image">
           <img src={mainBottle} alt="APAS Bottle" />
@@ -19,7 +21,7 @@ export function AboutApasSection() {
 
         {/* Right text content */}
         <div className="about-apas-content">
-          <p className="tagline">ABOUT APAS</p>
+          <p className="tagline">APAS-"Always Pure And Safe"</p>
           <h2>The Best Custom Label Bottled Water</h2>
           <p className="description">
             Get custom bottled water that's just right for you with APAS – Always Pure and Safe! 
@@ -27,7 +29,7 @@ export function AboutApasSection() {
             safe, and reliable. Trust us to deliver the best product for your needs.
           </p>
 
-          <div className="highlight">
+          <div className="highlight">5
             <i className="bi bi-award-fill"></i>
             <span>Best Customised Water Bottle Brand In Central India</span>
           </div>

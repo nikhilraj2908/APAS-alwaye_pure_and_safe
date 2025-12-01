@@ -32,7 +32,8 @@
   font-size: 48px;
   line-height: 1.2;
   margin-bottom: 15px;
-  color: #222222;
+  color: #f1ebeb;
+  text-shadow:1px 0px 10px #000000;
 }
 
 .hero-subtitle-carousel {
