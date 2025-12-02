@@ -18,14 +18,15 @@ const Header: React.FC = () => {
 
         {/* Nav links */}
         <nav className="nav">
-  <Link to="/about">About Us</Link>
-  <Link to="/products">Products</Link>
-  <Link to="/customization">Customization</Link>
-  <Link to="/private-labels">Private Labels</Link>
-  <Link to="/contact">Contact Us</Link>
-  <a href="https://www.amazon.com/s?k=apas+water" target="_blank" rel="noopener noreferrer">
-    Shop by Amazon
-  </a>
+          <Link to='/'>Home</Link>
+          <Link to="/about">About Us</Link>
+          <Link to="/products">Products</Link>
+          <Link to="/customization">Customization</Link>
+          {/* <Link to="/private-labels">Private Labels</Link> */}
+          <Link to="/contact">Contact Us</Link>
+          <a href="https://www.amazon.com/s?k=apas+water" target="_blank" rel="noopener noreferrer">
+              Shop by Amazon
+          </a>
 </nav>
 
         {/* CTA button */}

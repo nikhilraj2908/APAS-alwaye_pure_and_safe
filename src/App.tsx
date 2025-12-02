@@ -31,22 +31,35 @@ import { ProductsPage } from "./pages/ProductsPage/ProductsPage";
 // import { AboutUs } from "./pages/AboutUs/AboutUs"; // import About Us page
 // import { Products } from "./pages/Products/Products"; // example
 // import { Contact } from "./pages/Contact/Contact";   // example
+import 'react-whatsapp-widget/dist/index.css';
+// import { Widget } from 'react-whatsapp-widget';
+import { ChatBox } from "./components/ChatBox/ChatBox";
+import { WhatsAppChat } from "./components/WhatsAppChat/WhatsAppChat";
+import { CustomizationPage } from "./pages/CustomizationPage/CustomizationPage";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <BrowserRouter>
+
     <ScrollToTop />
       <Header /> {/* Header stays on top */}
+      
       <Routes>
         <Route path="/" element={<Home />} /> {/* Home / Section page */}
         <Route path="/about" element={<AboutUs />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path='/customization' element={<CustomizationPage/>}></Route>
       </Routes>
       <div className="section-separator"></div>
       <Footer />
+      <div style={{ position: "fixed", bottom: 20, right: 20, zIndex: 1000 }}>
+ {/* <ChatBox /> */}
+ <WhatsAppChat phoneNumber="+917693074458" />
+</div>
+
     </BrowserRouter>
   );
 }

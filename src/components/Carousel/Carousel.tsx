@@ -9,6 +9,7 @@ import "./Carousel.css";
 import banner1 from "../../assets/banner1.png";
 import banner2 from "../../assets/banner2.png";
 import banner3 from "../../assets/banner3.png";
+import { useNavigate } from "react-router-dom";
 
 interface SlideData {
   title: string;
@@ -37,7 +38,14 @@ const slides: SlideData[] = [
   },
 ];
 
+
 const Carousel: React.FC = () => {
+
+  
+  const navigate=useNavigate();
+function readmoreclicked(){
+  navigate('/about')
+}
   return (
     <section className="hero-carousel">
       <Swiper
@@ -57,7 +65,7 @@ const Carousel: React.FC = () => {
                 <h1>{slide.title}</h1>
                 <p className="hero-subtitle-carousel">{slide.subtitle}</p>
                 <div className="hero-buttons">
-                  <button className="hero-btn hero-btn-primary">
+                  <button className="hero-btn hero-btn-primary" onClick={readmoreclicked}>
                     READ MORE
                   </button>
                   <button className="hero-btn hero-btn-dark">
