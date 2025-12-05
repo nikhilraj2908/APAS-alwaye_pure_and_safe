@@ -1,7 +1,11 @@
+/* ============================= */
+/* DESKTOP HEADER                */
+/* ============================= */
+
 .header {
   width: 100%;
   padding: 18px 0;
-  background: linear-gradient(90deg, #e7f6ff, #ffffff); /* Water-themed gradient */
+  background: linear-gradient(90deg, #e7f6ff, #ffffff);
   backdrop-filter: saturate(180%) blur(6px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   position: sticky;
@@ -22,14 +26,15 @@
   object-fit: contain;
 }
 
-/* Navigation */
+/* Desktop Navigation */
 .nav {
   display: flex;
   gap: 30px;
+  align-items: center;
 }
 
 .nav a {
-  color: #003b73; /* Deep blue */
+  color: #003b73;
   font-weight: 500;
   font-size: 16px;
   text-decoration: none;
@@ -71,3 +76,152 @@
   background: linear-gradient(90deg, #0088ea, #005fb8);
   transform: translateY(-2px);
 }
+
+/* Hamburger icon - hidden on desktop */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Hamburger lines */
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px 0;
+  background: #007ce7;
+  border-radius: 999px;
+  transition: 0.3s ease;
+}
+
+/* Desktop only appointment */
+.desktop-appointment {
+  display: block;
+}
+
+/* Mobile only hidden by default */
+.mobile-appointment {
+  display: none;
+}/* Close button inside drawer */
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  font-size: 30px;
+  color: #003b73;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2000;
+  display: none;
+}
+
+/* ============================= */
+/* MOBILE NAV DRAWER             */
+/* ============================= */
+
+@media (max-width: 768px) {
+  /* Close button inside drawer */
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  font-size: 30px;
+  color: #003b73;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2000;
+  display: inline;
+}
+  .header-container {
+    width: 94%;
+  }
+
+  /* Show hamburger on mobile */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Animate hamburger into X when open */
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Drawer - hidden by default */
+  .nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 75%;
+  max-width: 320px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  box-shadow: -6px 0px 25px rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  padding: 90px 32px 32px 32px;
+  gap: 20px;
+  transition: right 0.35s ease-in-out;
+  z-index: 1050;
+  position: fixed; /* important */
+}
+
+
+  /* Shown when active */
+  .nav.active {
+    display: flex;
+    right: 0;
+    padding-left: 20px;
+  }
+
+  .nav a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #003b73;
+    padding: 8px 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
+  }
+
+  /* Mobile appointment inside drawer */
+  .mobile-appointment {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Hide desktop appointment on mobile */
+  .desktop-appointment {
+    display: none;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .nav {
+    width: 82%;
+    padding: 80px 24px 24px 24px;
+  }
+
+  .nav a {
+    font-size: 16px;
+  }
+}
+

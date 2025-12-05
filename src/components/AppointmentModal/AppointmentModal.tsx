@@ -93,7 +93,7 @@ export function AppointmentModal() {
                   <Form.Control
                     type="text"
                     placeholder="Enter full name"
-                    name="name"
+                    name="fullName"
                     value={formData.fullName}
                     onChange={handleChange}
                     required
@@ -104,8 +104,8 @@ export function AppointmentModal() {
                 <Form.Group controlId="email">
                   <Form.Label>Email</Form.Label>
                  <Form.Control
-    type="text"
-    placeholder="Enter full name"
+    type="email"
+    placeholder="Enter mailID"
     name="email"
     value={formData.email}
     onChange={handleChange}

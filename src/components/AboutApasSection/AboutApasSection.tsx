@@ -1,13 +1,13 @@
-import React from "react";
+// import React from "react";
 import "./AboutApasSection.css";
 
 // Example images
 import mainBottle from "../../assets/banner1.png";
-import sideBottle from "../../assets/banner2.png";
+// import sideBottle from "../../assets/banner2.png";
 
 export function AboutApasSection() {
   return (
-    <section className="about-apas-section " style={{paddingTop:'20vh'}}>
+    <section className="about-apas-section " >
         <h2 className="section-title text-center mb-5">About APAS</h2>
       <div className="about-apas-container">
 

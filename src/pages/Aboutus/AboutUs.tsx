@@ -1,6 +1,7 @@
-import React from "react";
+// import React from "react";
 import "./AboutUs.css";
 import aboutImage from "../../assets/aboutus.png"; // Replace with your About Us image
+import HappyCustomers from "../../components/HappyCustomers/HappyCustomers";
 
 export function AboutUs() {
   return (
@@ -30,6 +31,9 @@ export function AboutUs() {
           </a>
         </div>
       </div>
+            <HappyCustomers/>
+
     </section>
+
   );
 }

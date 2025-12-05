@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import "./CustomizationFeatures.css";
 import bottle from "../../assets/bottle1.1.png"; // floating bottle image
 import leafIcon from "../../assets/leaf.gif";

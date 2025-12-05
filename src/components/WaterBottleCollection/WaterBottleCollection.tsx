@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./WaterBottleCollection.css";
 
 // Sample bottle images
@@ -28,28 +28,7 @@ export function WaterBottleCollection() {
   return (
     <section className="bottle-collection-section">
       {/* Bubble Background */}
-      <div className="bubbles">
-        {bubbleList.map((b, idx) => (
-          <div
-            key={idx}
-            className="bubble"
-            style={{
-              "--bubble-left-offset": `${Math.random() * 100}vw`,
-              "--bubble-radius": `${Math.random() * 10 + 2}vw`,
-              "--bubble-float-duration": `${Math.random() * 6 + 6}s`,
-              "--bubble-sway-duration": `${Math.random() * 2 + 4}s`,
-              "--bubble-float-delay": `0s`,
-              "--bubble-sway-delay": `0s`,
-              "--bubble-sway-type": Math.random() > 0.5 ? 'sway-left-to-right' : 'sway-right-to-left',
-              animationIterationCount: 1 // play once and disappear
-            }}
-            onAnimationEnd={() => {
-              // Remove bubble after animation
-              setBubbleList((prev) => prev.filter((_, i) => i !== idx));
-            }}
-          ></div>
-        ))}
-      </div>
+     
 
       {/* Bottle content */}
       <div className="bubble-content">

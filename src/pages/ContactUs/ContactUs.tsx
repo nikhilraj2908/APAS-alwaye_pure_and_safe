@@ -1,6 +1,6 @@
-import React from "react";
+// import React from "react";
 import "./ContactUs.css";
-import { AppointmentModal } from "../../components/AppointmentModal/AppointmentModal";
+// import { AppointmentModal } from "../../components/AppointmentModal/AppointmentModal";
 import contactus from '../../assets/contact-us.jpg';
 
 export function ContactUs() {

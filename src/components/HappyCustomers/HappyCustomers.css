@@ -1,0 +1,184 @@
+/* ===========================================
+   GLOBAL SECTION WRAPPER
+=========================================== */
+.happy-customers {
+  padding: 60px 40px;
+  text-align: center;
+  background: #f7f9fc;
+}
+
+.section-heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+
+/* ===========================================
+   PARTNERSHIP CARDS (3 CARDS SLIDER)
+=========================================== */
+.partner-swiper {
+  padding-bottom: 55px !important; /* space for bullets */
+}
+
+.partner-card {
+  width: 100%;
+  max-width: 380px; /* smaller & consistent card width */
+  margin: auto;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 15px 18px 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.partner-img {
+  width: 100%;
+  height: 260px;        /* equal height for all cards */
+  object-fit: cover;    /* perfectly crops images */
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+.partner-title {
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.partner-desc {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #555;
+}
+
+
+/* ===========================================
+   PAGINATION (DOTS)
+=========================================== */
+.swiper-pagination-bullets {
+  bottom: 10px !important;  /* push bullets lower */
+}
+
+.swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  background: #bfbfbf !important;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background: #007aff !important; /* your brand colour */
+  opacity: 1;
+  width: 11px;
+  height: 11px;
+}
+
+
+/* ===========================================
+   EVENTS SLIDER (FADE SLIDER)
+=========================================== */
+.events-heading {
+  margin-top: 75px;
+  color: #1a1a1a;
+}
+.events-slide {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden; /* important for rounded overlay */
+}
+
+/* Gradient patch for readability */
+.events-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 25px 50px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0)
+  ); /* soft black fade */
+  text-align: center;
+  color: #fff;
+}
+.events-bg {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 14px;
+  filter: brightness(0.85);
+}
+.events-overlay h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.events-overlay p {
+  font-size: 17px;
+  opacity: 0.95;
+  color: #f1f1f1;
+}
+
+
+/* ===========================================
+   RESPONSIVE DESIGN
+=========================================== */
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 26px;
+  }
+
+  .partner-card {
+    max-width: 90%;
+  }
+
+  .partner-img {
+    height: 220px;
+  }
+
+  .events-bg {
+    height: 300px;
+  }
+
+  .events-overlay h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .happy-customers {
+    padding: 40px 20px;
+  }
+
+  .partner-img {
+    height: 200px;
+  }
+
+  .events-bg {
+    height: 260px;
+  }
+}
+/* Space between arrows and cards */
+.partner-swiper .swiper-button-prev,
+.partner-swiper .swiper-button-next {
+  color: #204070e3 !important;      /* arrow color */
+  width: 20px;
+  height: 20px;
+}

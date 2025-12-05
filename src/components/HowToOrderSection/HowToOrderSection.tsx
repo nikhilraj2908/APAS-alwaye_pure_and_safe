@@ -1,5 +1,5 @@
-import React from "react";
 import "./HowToOrderSection.css";
+import { useNavigate } from "react-router-dom";
 
 // Example images (replace with your actual images)
 import step1 from "../../assets/banner1.png";
@@ -7,6 +7,8 @@ import step2 from "../../assets/banner2.png";
 import step3 from "../../assets/banner3.png";
 
 export function HowToOrderSection() {
+  const navigate = useNavigate();
+
   const steps = [
     {
       img: step1,
@@ -14,6 +16,7 @@ export function HowToOrderSection() {
       title: "Submit A Quote",
       description:
         "Tell us about your brand and specify your needs in our convenient inquiry form.",
+      clickable: false,
     },
     {
       img: step2,
@@ -21,6 +24,8 @@ export function HowToOrderSection() {
       title: "Approve Designs",
       description:
         "Get the best design options for your brand and finalise pricing, label and packaging.",
+      clickable: true, // 🔥 Make this clickable
+      link: "/order",
     },
     {
       img: step3,
@@ -28,18 +33,33 @@ export function HowToOrderSection() {
       title: "Place Your Order",
       description:
         "Get your custom bottled water with APAS delivered directly to your doorstep.",
+      clickable: false,
     },
   ];
+
+  const cardClickHandler = (step: any) => {
+    if (step.clickable && step.link) {
+      navigate(step.link);
+    }
+  };
 
   return (
     <section className="how-to-order-section">
       <h2 className="section-title text-center mb-5">How To Order</h2>
+
       <div className="steps-container d-flex justify-content-center flex-wrap">
         {steps.map((step, index) => (
-          <div key={index} className="step-card text-center m-3">
+          <div
+            key={index}
+            className={`step-card text-center m-3 ${
+              step.clickable ? "clickable-card" : ""
+            }`}
+            onClick={() => cardClickHandler(step)}
+          >
             <div className="step-img-wrapper">
               <img src={step.img} alt={step.title} />
             </div>
+
             <div className="step-number">{step.number}</div>
             <h5 className="step-title">{step.title}</h5>
             <p className="step-desc">{step.description}</p>

@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import "./CustomizationPage.css";
 import bannerImage from "../../assets/customization.png"; // your top banner
 import bottle1 from "../../assets/bottle1.png";

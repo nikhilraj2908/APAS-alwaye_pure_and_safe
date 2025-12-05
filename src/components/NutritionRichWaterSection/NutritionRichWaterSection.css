@@ -1,8 +1,8 @@
-.nutrition-section {
+/* .nutrition-section {
   width: 100%;
   padding: 10px 0 10vh 0;
   background: #f7f9fb;
-}
+} */
 
 .section-title {
   font-size: 36px;
@@ -76,12 +76,7 @@
   .product-bottle { width: 120px; }
 }
 
-.nutrition-section {
-  position: relative;
-  width: 100%;
-  padding: 0 0 10vh 0;
-  background: #4e54c8; /* gradient base */
-}
+
 
 .nutrition-content {
   position: relative;

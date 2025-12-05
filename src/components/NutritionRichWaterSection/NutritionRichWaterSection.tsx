@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import "./NutritionRichWaterSection.css";
 
 // Center bottle
@@ -29,13 +29,7 @@ export function NutritionRichWaterSection() {
   return (
     <section className="nutrition-section">
       {/* Floating squares background */}
-      <div className="area">
-        <ul className="circles">
-          {Array.from({ length: 10 }).map((_, i) => (
-            <li key={i}></li>
-          ))}
-        </ul>
-      </div>
+    
 
       {/* Main content */}
       <div className="nutrition-content">
