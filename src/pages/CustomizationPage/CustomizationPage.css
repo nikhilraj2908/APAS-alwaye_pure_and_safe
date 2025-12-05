@@ -1,164 +1,275 @@
 .customization-page {
   width: 100%;
   font-family: 'Arial', sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Banner */
+/* Banner - Fixed for mobile */
 .customization-banner {
   width: 100%;
   height: 60vh;
+  min-height: 300px; /* Minimum height for mobile */
+  max-height: 500px; /* Maximum height for larger screens */
   background-size: cover;
   background-position: center;
   position: relative;
-}
-.banner-overlay {
-  position: absolute;
-  top: 60%;
-  left: 10%;
-  transform: translateY(-50%);
-  color: #fff;
-}
-.banner-overlay h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-.banner-overlay p {
-  font-size: 20px;
+  display: flex;
+  align-items: center;
 }
 
-/* Process */
+.banner-overlay {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  padding: 20px;
+  transform: none; /* Remove translate for better mobile control */
+  top: 0;
+  left: 0;
+}
+
+.banner-overlay h1 {
+  font-size: clamp(28px, 5vw, 48px); /* Responsive font size */
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+
+.banner-overlay p {
+  font-size: clamp(16px, 2.5vw, 20px);
+  max-width: 600px;
+}
+
+/* Process Section - Fixed for mobile */
 .customization-process {
   text-align: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 .customization-process h2 {
-  font-size: 36px;
+  font-size: clamp(28px, 4vw, 36px);
   color: #204070;
   margin-bottom: 20px;
+  line-height: 1.3;
 }
-.customization-process p {
+
+.customization-process > p {
   font-size: 16px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
+  max-width: 800px;
+  line-height: 1.6;
 }
+
+/* Process Steps - Fixed for mobile */
 .process-icons {
   display: flex;
   justify-content: center;
-  gap: 30px;
   flex-wrap: wrap;
+  gap: 20px;
+  max-width: 100%;
+  margin: 0 auto;
 }
-.process-step img {
-  width: 80px;
-  margin-bottom: 10px;
-}
-.process-step p {
-  font-weight: 600;
-}
-.bottle-types h2{
-  font-size: 36px;
-  color: #204070;
-  margin-bottom: 20px;
-}/* Features */
-.customization-features {
-  background: #e5f0dc;
-  padding: 60px 20px;
-}
-.features-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.features-content p {
-  flex: 1 1 400px;
-  font-size: 16px;
-  line-height: 1.6;
-  margin-right: 20px;
-}
-.features-icons {
-  flex: 1 1 300px;
+
+.process-step {
+  width: 120px; /* Smaller for mobile */
+  min-height: 140px; /* Use min-height instead of fixed */
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  font-weight: 600;
-}
-.features-content img {
-  width: 250px;
-  margin-top: 20px;
-}
-/* Bottle Types Carousel */
-.bottle-types {
-  padding: 60px 20px;
+  align-items: center;
+  justify-content: flex-start;
   text-align: center;
+  flex: 0 0 auto; /* Don't grow or shrink */
+}
+
+.process-step img {
+  width: 80px; /* Smaller for mobile */
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.process-step p {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+  padding: 0 5px;
+  word-wrap: break-word;
+  line-height: 1.3;
+}
+
+/* Bottle Types Section - Fixed for mobile */
+.bottle-types {
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .bottle-types h2 {
-  font-size: 36px;
-  margin-bottom: 40px;
+  font-size: clamp(28px, 4vw, 36px);
   color: #204070;
+  margin-bottom: 30px;
+  line-height: 1.3;
 }
 
-/* Container fixed height for equal bottle size */
+/* Container with responsive height */
 .bottle-carousel {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  align-items: flex-end;
   flex-wrap: wrap;
-  height: 380px; /* Adjust height as needed */
-  align-items: flex-end; /* Align bottoms properly */
+  gap: 20px;
+  max-width: 100%;
+  height: auto; /* Remove fixed height */
+  min-height: 300px; /* Minimum height */
+  margin: 0 auto;
 }
 
-/* Each bottle */
+/* Each bottle container */
 .bottle-item {
-  height: 100%;
+  flex: 0 0 auto;
+  height: 250px; /* Reduced height for mobile */
   display: flex;
   align-items: flex-end;
+  justify-content: center;
 }
 
-/* All images stay SAME HEIGHT */
+/* Bottle images - responsive */
 .bottle-item img {
-  height: 100%;     /* <==== SAME HEIGHT for all bottles */
-  width: auto;      /* keep proportions */
+  height: 100%;
+  max-width: 100%;
   object-fit: contain;
   transition: transform 0.4s ease, opacity 0.4s ease;
   opacity: 0.9;
 }
 
 .bottle-item:hover img {
-  transform: translateY(-20px);
+  transform: translateY(-10px); /* Smaller hover effect for mobile */
   opacity: 1;
 }
 
-.process-step {
-  width: 140px;       /* Equal width for all */
-  height: 160px;      /* Equal height for all */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-  margin-left: 3%;
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  /* Banner adjustments */
+  .customization-banner {
+    height: 50vh;
+    min-height: 250px;
+  }
+  
+  .banner-overlay {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* Process section adjustments */
+  .customization-process {
+    padding: 30px 15px;
+  }
+  
+  .process-icons {
+    gap: 15px;
+    justify-content: space-around; /* Better distribution on mobile */
+  }
+  
+  .process-step {
+    width: 100px;
+    min-height: 120px;
+  }
+  
+  .process-step img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .process-step p {
+    font-size: 13px;
+  }
+  
+  /* Bottle carousel adjustments */
+  .bottle-carousel {
+    gap: 15px;
+    justify-content: space-around;
+  }
+  
+  .bottle-item {
+    height: 200px;
+    width: 45%; /* Two per row on mobile */
+    margin-bottom: 10px;
+  }
+  
+  .bottle-item:nth-child(n+3) {
+    height: 180px; /* Slightly smaller for second row */
+  }
 }
 
-.process-step img {
-  width: 130px;        /* Maintain consistent icon size */
-  height: 130px;       /* Force equal height */
-  object-fit: contain;
-  margin-bottom: 10px;
-
+@media (max-width: 480px) {
+  /* Extra small screens */
+  .customization-banner {
+    height: 40vh;
+    min-height: 200px;
+  }
+  
+  .banner-overlay h1 {
+    font-size: 24px;
+  }
+  
+  .banner-overlay p {
+    font-size: 14px;
+  }
+  
+  .process-step {
+    width: 85px;
+    min-height: 110px;
+  }
+  
+  .process-step img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .process-step p {
+    font-size: 12px;
+  }
+  
+  .bottle-item {
+    height: 180px;
+    width: 45%;
+  }
+  
+  .bottle-item:nth-child(n+3) {
+    height: 160px;
+  }
 }
 
-.process-icons {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
+/* Prevent horizontal scrolling on very small screens */
+@media (max-width: 320px) {
+  .customization-page {
+    padding: 0;
+  }
+  
+  .process-icons {
+    gap: 10px;
+  }
+  
+  .process-step {
+    width: 75px;
+  }
+  
+  .bottle-item {
+    width: 48%;
+    height: 160px;
+  }
 }
 
-/* Responsive */
-@media(max-width: 768px) {
-  .banner-overlay h1 { font-size: 36px; }
-  .banner-overlay p { font-size: 16px; }
-  .features-content { flex-direction: column; }
-  .features-content img { margin: 20px 0; }
-  .bottle-carousel { gap: 20px; }
+/* For tablets and larger mobile devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bottle-carousel {
+    gap: 30px;
+  }
+  
+  .bottle-item {
+    height: 300px;
+  }
 }

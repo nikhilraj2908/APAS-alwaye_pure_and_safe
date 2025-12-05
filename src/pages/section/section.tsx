@@ -6,14 +6,14 @@ import { HeroVideoSection } from "../../components/HeroVideoSection/HeroVideoSec
 import { HowToOrderSection } from "../../components/HowToOrderSection/HowToOrderSection.js";
 import { NutritionRichWaterSection } from "../../components/NutritionRichWaterSection/NutritionRichWaterSection.js";
 import { WaterBottleCollection } from "../../components/WaterBottleCollection/WaterBottleCollection.js";
-
+import './section.css'
 export function Section(){
     return(
         <>
               
                   <div className="position-relative">
                     <Carousel/>
-                    <div  className="carousel-box-container"  style={{ top: "82%" ,zIndex:"2",width:'100%'}}>
+                    <div  className="carousel-box-container"  >
                         <CarouselBox/>
                     </div>
                   </div>

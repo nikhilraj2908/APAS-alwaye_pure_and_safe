@@ -1,6 +1,6 @@
 .hero-carousel {
   width: 100%;
-  
+  overflow: hidden;
 }
 
 .hero-slide {
@@ -9,15 +9,16 @@
   background-position: center right;
   display: flex;
   align-items: center;
-}
-.hero-content {
-  padding-top: 80px;
-  padding-bottom: 100px;
+  position: relative;
 }
 
 .hero-content {
+  padding-top: 80px;
+  padding-bottom: 100px;
   max-width: 520px;
   margin-left: 8%;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-tagline {
@@ -28,18 +29,61 @@
   font-size: 13px;
 }
 
-.hero-content h1 {
+/* WATER STYLE TITLE EFFECT */
+.water-style-title {
+  font-family: 'Montserrat', 'Arial Black', sans-serif;
   font-size: 48px;
+  font-weight: 900;
   line-height: 1.2;
   margin-bottom: 15px;
-  color: #f1ebeb;
-  text-shadow:1px 0px 10px #000000;
+  
+  /* Chrome/Metal Gradient */
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f0f0f0 15%,
+    #d0d0d0 30%,
+    #a0a0a0 45%,
+    #808080 50%,
+    #a0a0a0 55%,
+    #d0d0d0 70%,
+    #f0f0f0 85%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Black outline for contrast */
+  -webkit-text-stroke: 1.5px #000;
+  text-stroke: 1.5px #000;
+  
+  /* Depth with shadows */
+  text-shadow: 
+    0 2px 4px rgba(0,0,0,0.4),
+    0 4px 8px rgba(0,0,0,0.2);
+  
+  /* Optional animation for subtle shine */
+  animation: metallicShine 4s ease-in-out infinite alternate;
+}
+
+/* Animation for metallic shine effect */
+@keyframes metallicShine {
+  0% {
+    background-position: 0% 50%;
+    background-size: 200% 200%;
+  }
+  100% {
+    background-position: 100% 50%;
+    background-size: 200% 200%;
+  }
 }
 
 .hero-subtitle-carousel {
   font-size: 18px;
   color: #555555;
   margin-bottom: 28px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .hero-buttons {
@@ -53,6 +97,7 @@
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .hero-btn-primary {
@@ -60,11 +105,47 @@
   color: #ffffff;
 }
 
+.hero-btn-primary:hover {
+  background-color: #0066c0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 .hero-btn-dark {
   background-color: #000000;
   color: #ffffff;
 }
-    
+
+.hero-btn-dark:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Overlay for better text readability */
+.hero-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+ 
+  z-index: 1;
+}
+
+/* Alternative: If you want just a right-side gradient */
+.hero-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 1;
+}
+
 /* TABLETS */
 @media (max-width: 992px) {
   .hero-slide {
@@ -79,9 +160,7 @@
     padding-bottom: 70px;
   }
 
-  .hero-content h1 {
-    font-size: 38px;
-  }
+ 
 
   .hero-subtitle-carousel {
     font-size: 16px;
@@ -90,26 +169,39 @@
 
 /* LARGE MOBILE (e.g., iPhone Pro Max, Samsung) */
 @media (max-width: 768px) {
-  .swiper-button-prev,.swiper-button-next{
-      display: none;
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
   }
+  
   .hero-slide {
     height: 65vh;
     background-position: center;
     padding: 0 20px;
   }
 
+  .hero-slide::before {
+  
+  }
+
   .hero-content {
     margin-left: 0;
     max-width: 100%;
+    text-align: center;
   }
 
-  .hero-content h1 {
+  .water-style-title {
     font-size: 32px;
+    -webkit-text-stroke: 1px #000;
+    text-stroke: 1px #000;
   }
 
   .hero-subtitle-carousel {
     font-size: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    border-radius: 5px;
   }
 
   .hero-buttons {
@@ -129,8 +221,10 @@
     height: 60vh;
   }
 
-  .hero-content h1 {
+  .water-style-title {
     font-size: 26px;
+    -webkit-text-stroke: 0.8px #000;
+    text-stroke: 0.8px #000;
   }
 
   .hero-subtitle-carousel {
@@ -142,4 +236,3 @@
     font-size: 14px;
   }
 }
-
